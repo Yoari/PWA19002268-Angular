@@ -1,0 +1,16 @@
+
+
+<div>
+    numero 1 <input type="number" [(ngModel)]="numero1" name="numero1">
+    numero 2 <input type="number" [(ngModel)]="numero2" name="numero2">
+     Seleciona una opcion
+    <select [(ngModel)]="opcion" name="opcion">
+        <option [ngValue]="1">Suma</option>
+        <option [ngValue]="2">Resta</option>
+        <option [ngValue]="3">Multiplicacion</option>
+        <option [ngValue]="4">Division</option>
+    </select>
+    <button type="button" (click)="operacion()">Calcular</button>
+
+    <h1>{{total}}</h1>
+</div>

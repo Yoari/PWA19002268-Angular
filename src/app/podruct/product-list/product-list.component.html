@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">
+                Filtrar por:
+            </div>
+            <div class="col-md-4">
+                <input type="text" [(ngModel)]="listFilter" name="filter" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Filtro:</h3>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="products.length">
+                <thead>
+                    <tr>
+                        <th>
+                            <button type="button" (click)="muestraImagen()" class="btn btn-{{muestraImg ? 'danger' : 'success'}}">{{muestraImg ? 'Ocultar' : 'Mostrar'}} Imagen</button>
+                        </th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products | productoFilter:listFilter">
+                        <td>
+                            <img class="rounded float-left img-thumbnail" 
+                            [src]="product.imgUrl"
+                            [title]="product.productName"
+                            [style.width.px]="300"
+                            *ngIf="muestraImg">
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.description | titlecase}}</td>
+                        <td>{{product.createDate }}</td>
+                        <td>{{product.price | currency}}</td>
+                        <td>{{product.rating | number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

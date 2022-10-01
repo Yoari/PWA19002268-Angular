@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="card">
+    <div class="card-header justify-content-center align-items-center text-center mt-3">
+      <h1>Cinepolis</h1>
+    </div>
+    <div class="card-body">
+      <div class="row justify-content-center align-items-center text-center">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header justify-content-center align-items-center text-center">
+              <h1>Entradas</h1>
+            </div>
+            <div class="card-body">
+              <div class="row g-3 mt-1 align-items-center">
+                <div class="col-4">
+                  <label for="" class="col-form-label">Nombre</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control">
+                </div>
+              </div>
+              <div class="row g-3 mt-1 align-items-center">
+                <div class="col-4">
+                  <label for="" class="col-form-label">Cantidad compradores</label>
+                </div>
+                <div class="col-auto">
+                  <input type="number" [(ngModel)]="cantidadCompradores" name="cantidadCompradores"
+                    class="form-control">
+                </div>
+              </div>
+              <div class="row g-3 mt-1 align-items-center">
+                <div class="col-4">
+                  <label for="" class="col-form-label">Tarjeta Cineco</label>
+                </div>
+                <div class="col-auto row">
+                  <div class="col-5 form-check">
+                    <input type="radio" class="form-check-input" name="tarjetaCineco"
+                      (click)="tarjetaCinecoValor(true)">
+                    <label for="" class="form-check-label">Si</label>
+                  </div>
+                  <div class="col-5 form-check">
+                    <input type="radio" class="form-check-input" checked name="tarjetaCineco"
+                      (click)="tarjetaCinecoValor(true)">
+                    <label for="" class="form-check-label">No</label>
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="row g-3 mt-1 align-items-center">
+                <div class="col-4">
+                  <label for="" class="col-form-label">Cantidad de boletos</label>
+                </div>
+                <div class="col-auto">
+                  <input type="number" [(ngModel)]="cantidadBoletos" name="cantidadBoletos" class="form-control">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header justify-content-center align-items-center text-center">
+              <h1>Salidas</h1>
+            </div>
+            <div class="card-body">
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                  <label for="" class="col-form-label">Total a pagar</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" [(ngModel)]="total" name="total" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center text-center mt-3">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header justify-content-center align-items-center text-center">
+              <h1>Movimientos</h1>
+            </div>
+            <div class="card-body">
+              <div class="row g-3 mt-1 align-items-center">
+                <div class="col-6">
+                  <button class="btn btn-success" (click)="procesar()" >Procesar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-danger">Exit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
